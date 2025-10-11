@@ -1,1 +1,0 @@
-alert("Xush Kelibsiz YouTubega")
