@@ -1,0 +1,1 @@
+alert("Xush Kelibsiz YouTubega")
