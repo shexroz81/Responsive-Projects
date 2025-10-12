@@ -14,45 +14,51 @@
 </head>
 
 <body>
-
     <header>
-        <div class="navbar">
+        <nav class="navbar">
+            <button class="toggle-btn"><i class="fa-solid fa-bars"></i></button>
             <div class="logo">
-                <img src="../img/pngwing.com.png" alt="">
-                <span class="logo-text">YouTube</span>
+                <img src="../img/pngwing.com.png" alt="" width="40px">
+                YouTube
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Search..." />
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
 
-
-            <div class="search-container">
-                <div class="search-box">
-                    <input type="text" placeholder="Search..." />
-                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
-                <button class="mic-btn"><i class="fa-solid fa-microphone"></i></button>
-            </div>
-
-            <div class="profil">
-                <button class="create"> + Create</button>
-                <button type="button" class="btn  position-relative" id="notify">
+            <div class="profile">
+                <button type="button" class="btn position-relative" id="notify">
                     <i class="fa-solid fa-bell"></i>
-                    <span class="position-absolute top-0 start-90 translate-middle badge rounded-pill bg-danger">
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                         99+
                     </span>
                 </button>
-                <i class="fa-solid fa-circle-user" id="icon"></i>
+                <button>
+                    <i class="fa-solid fa-user"></i>
+                </button>
             </div>
-        </div>
+        </nav>
     </header>
 
+    <div class="layout">
+        <aside class="sidebar">
+            <ul>
+                <li><i class="fa-solid fa-house"></i> <span>Home</span></li>
+                <li><i class="fa-solid fa-bolt"></i> Shorts</li>
+                <li><i class="fa-solid fa-folder"></i> Subscriptions</li>
+                <li><i class="fa-solid fa-book"></i> Library</li>
+                <li><i class="fa-solid fa-clock"></i> History</li>
+            </ul>
+        </aside>
+
+        <main>
+        </main>
+    </div>
 
 
 
 
 
-
-
-
-    <main></main>
     <footer></footer>
 
 
