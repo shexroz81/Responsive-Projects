@@ -106,6 +106,8 @@ header {
     background: #202020;
     padding-top: 20px;
     color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .sidebar ul {
@@ -113,7 +115,7 @@ header {
 }
 
 .sidebar li {
-    padding: 15px 20px;
+    padding: 15px 10px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -123,6 +125,17 @@ header {
 .sidebar li:hover {
     background: #383838;
 }
+
+.sidebar.hide-text span {
+    display: none;
+}
+
+.sidebar.collapsed {
+    width: 100px;
+}
+
+/* Responsive Qilish Uchun */
+
 
 
 
