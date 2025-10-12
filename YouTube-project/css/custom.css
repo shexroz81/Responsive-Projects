@@ -132,11 +132,68 @@ header {
 
 .sidebar.collapsed {
     width: 100px;
+
 }
+
+
+/* Main */
+
+main {
+    flex: 1;
+    padding: 10px;
+    background: #202020;
+}
+
+#link-row {
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.ul-links ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-item a {
+    color: white;
+}
+
+#video-container {
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.inside-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.inside-container iframe {
+    border-radius: 5px;
+}
+
+.inside-container .card {
+    height: 16rem;
+    width: 24rem;
+    background-color: #202020;
+    border: none;
+}
+
+.inside-container .card p {
+    color: white;
+}
+
+
 
 /* Responsive Qilish Uchun */
 
-
+@media (max-width: 1200px) {
+    .ul-links ul {
+        display: none;
+    }
+}
 
 
 @media (max-width: 768px) {
@@ -157,5 +214,13 @@ header {
 
     .search-box input {
         display: none;
+    }
+
+    .sidebar {
+        height: 100vh;
+    }
+
+    .inside-container .card {
+        width: 16rem;
     }
 }
