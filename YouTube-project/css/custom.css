@@ -4,10 +4,13 @@
     box-sizing: border-box;
 }
 
+html,
 body {
+    min-height: 100vh;
     background: #181818;
 }
 
+/* Header */
 header {
     height: 80px;
     background: #202020;
@@ -91,18 +94,13 @@ header {
     color: white;
 }
 
-
-
 /* Layout + Sidebar + Main */
-
-
 .layout {
     display: flex;
 }
 
 .sidebar {
     width: 220px;
-    height: calc(100vh - 80px);
     background: #202020;
     padding-top: 20px;
     color: white;
@@ -132,16 +130,15 @@ header {
 
 .sidebar.collapsed {
     width: 100px;
-
 }
 
-
 /* Main */
-
 main {
     flex: 1;
     padding: 10px;
     background: #202020;
+    min-height: calc(100vh - 80px - 200px);
+    /* header + footer taxminiy balandlik */
 }
 
 #link-row {
@@ -185,11 +182,7 @@ main {
     color: white;
 }
 
-
-/* Footer  */
-
-
-
+/* Footer */
 footer {
     background: #afacac;
     color: white;
@@ -235,11 +228,6 @@ footer {
     color: white;
 }
 
-
-
-
-
-
 /* Responsive Qilish Uchun */
 
 @media (max-width: 1200px) {
@@ -256,6 +244,10 @@ footer {
 
     .navbar {
         gap: 10px;
+    }
+
+    .sidebar ul {
+        padding-left: 0px;
     }
 
     .footer-container {
