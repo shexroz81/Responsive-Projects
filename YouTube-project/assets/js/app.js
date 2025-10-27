@@ -10,51 +10,55 @@ toggleBtn.addEventListener("click", () => {
 
 // Class orqali cardlar qo`shish uchun
 
+
+
 class VideoCard {
-    constructor(url, sarlavha) {
-        this.url = url;
-        this.sarlavha = sarlavha;
+    constructor(container, thumbnail, title, link) {
+        this.container = document.getElementById(container);
+        this.thumbnail = thumbnail;
+        this.title = title;
+        this.link = link;
     }
 
     create() {
-        const card = document.createElement("div");
-        card.className = "card";
 
-        const video = document.createElement("iframe");
-        video.src = this.url;
-        video.allowFullscreen = true;
+        const card = document.createElement('div');
+        card.classList.add('video-card');
 
 
-        const title = document.createElement("h5");
-        title.textContent = this.sarlavha;
+        const img = document.createElement('img');
+        img.src = this.thumbnail;
 
-        card.append(video, title);
 
-        document.getElementById("cardContainer").append(card);
+        const h5 = document.createElement('h5');
+        h5.textContent = this.title;
+
+
+        card.appendChild(img);
+        card.appendChild(h5);
+
+
+        card.addEventListener('click', () => window.open(this.link, '_blank'));
+
+
+        this.container.appendChild(card);
     }
 }
 
-let card1 = new VideoCard("https://www.youtube.com/embed/tcU1sKh-0IA?si=dOSxXShxXwbSxBv6", "Ford Mustang vs Chevy Camaro vs Dodge Hellcat Redeye: ARRANCONES");
-let card2 = new VideoCard("https://www.youtube.com/embed/ulrmd1-ykyw?si=nmmqq3OBqiFHCo2J", "Ford Mustang vs Chevy Camaro vs Dodge Hellcat Redeye: ARRANCONES");
-let card3 = new VideoCard("https://www.youtube.com/embed/76nZEeRd_Sc?si=dFPlJgIzNI4qFWO_", "Ford Mustang vs Chevy Camaro vs Dodge Hellcat Redeye: ARRANCONES");
-let card4 = new VideoCard("https://www.youtube.com/embed/C9Fd_2-cm1s?si=L9ZNV6qV2g2yzMMc", "Ford Mustang vs Chevy Camaro vs Dodge Hellcat Redeye: ARRANCONES");
-let card5 = new VideoCard("https://www.youtube.com/embed/SJNbnVjecf0?si=DIdJlCBpQUOG81iJ", "Ford Mustang vs Chevy Camaro vs Dodge Hellcat Redeye: ARRANCONES");
-let card6 = new VideoCard("https://www.youtube.com/embed/iACMW42MUII?si=3cEFe02SFXAnj3JA", "Ford Mustang vs Chevy Camaro vs Dodge Hellcat Redeye: ARRANCONES");
-let card7 = new VideoCard("https://www.youtube.com/embed/N5SSWumNAp8?si=CcI6NNyD3XuGfzOq", "Ford Mustang vs Chevy Camaro vs Dodge Hellcat Redeye: ARRANCONES");
-let card8 = new VideoCard("https://www.youtube.com/embed/G9XhLca9JSk?si=NTO_irdU5XNURlqb", "Ford Mustang vs Chevy Camaro vs Dodge Hellcat Redeye: ARRANCONES");
-let card9 = new VideoCard("https://www.youtube.com/embed/_21MsJY8oHU?si=UKq4eNjwdaWmlUUE", "Ford Mustang vs Chevy Camaro vs Dodge Hellcat Redeye: ARRANCONES");
+
+const videos = [
+    { thumb: 'https://img.youtube.com/vi/fHsR6cu6MEw/hqdefault.jpg', title: 'This Is Switzerland’s Most Isolated Village – With a 100m Waterfall', link: 'https://www.youtube.com/watch?v=fHsR6cu6MEw' },
+    { thumb: 'https://img.youtube.com/vi/cOdynPv8cok/hqdefault.jpg', title: ' The Fate of the Furious | Harpooning Doms Car', link: 'https://www.youtube.com/watch?v=cOdynPv8cok' },
+    { thumb: 'https://img.youtube.com/vi/MKOqZBCCM3o/hqdefault.jpg', title: '1vs4 Clutches in Ultimate royale (handcam)', link: 'https://www.youtube.com/watch?v=MKOqZBCCM3o' },
+    { thumb: 'https://img.youtube.com/vi/kJQP7kiw5Fk/hqdefault.jpg', title: 'Luis Fonsi - Despacito ft. Daddy Yankee', link: 'https://www.youtube.com/watch?v=kJQP7kiw5Fk' },
+    { thumb: 'https://img.youtube.com/vi/jEG8wuUE1pY/hqdefault.jpg', title: '$1 vs $25,000 Secret Rooms', link: 'https://www.youtube.com/watch?v=jEG8wuUE1pY' },
+    { thumb: 'https://img.youtube.com/vi/5wb-zEpVqqU/hqdefault.jpg', title: 'ULTIMATE VA SKARELL FULL OLDIK 🤯BUNAQASI BIRINCHI MARTA OYINGA KELDI 😳', link: 'https://www.youtube.com/watch?v=5wb-zEpVqqU' },
+    { thumb: 'https://img.youtube.com/vi/aiP1WSoqHmU/hqdefault.jpg', title: 'I Transformed the END PORTAL in Minecraft Hardcore', link: 'https://www.youtube.com/watch?v=aiP1WSoqHmU' },
+    { thumb: 'https://img.youtube.com/vi/lggdhUvOtz8/hqdefault.jpg', title: 'Camping in an Alaskan Survival Cabin', link: 'https://www.youtube.com/watch?v=-gZC02MG_fo&t=10s' },
+    { thumb: 'https://img.youtube.com/vi/1cHUNCfh6dA/hqdefault.jpg', title: 'I turned a KIDS go-kart into a death trap...', link: 'https://www.youtube.com/watch?v=1cHUNCfh6dA' }
+];
 
 
-card1.create();
-card2.create();
-card3.create();
-card4.create();
-card5.create();
-card6.create();
-card7.create();
-card8.create();
-card9.create();
-
-
-
-
+videos.forEach(video => {
+    new VideoCard('videoContainer', video.thumb, video.title, video.link).create();
+});
