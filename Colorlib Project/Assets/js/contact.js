@@ -1,5 +1,12 @@
 // Js For Contact
 
+const main = document.getElementById("none-sub");
+const btn = document.getElementById("btn-x");
+
+btn.addEventListener("click", function () {
+  main.classList.toggle("none-active");
+});
+
 let users = [];
 
 const form = document.getElementById("Form");
