@@ -59,7 +59,7 @@ forms.addEventListener("submit", function (e) {
   forms.reset();
 });
 
-const form = document.getElementById("firstForm"); // Oldingi formangiz ID'si
+const form = document.getElementById("firstForm");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();

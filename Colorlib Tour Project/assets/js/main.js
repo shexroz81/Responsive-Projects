@@ -36,10 +36,8 @@ button.addEventListener("click", function () {
 
 const main = document.querySelector(".destination-container");
 
-console.log(main);
-
 class DestinationsText {
-  constructor(subTitle, mainTitle) {
+  constructor({ subTitle, mainTitle }) {
     this.subTitle = subTitle;
     this.mainTitle = mainTitle;
   }
@@ -55,7 +53,10 @@ class DestinationsText {
 }
 
 const textlari = [
-  new DestinationsText("SIMPLY AMAZING PLACES", "Popular Destinations"),
+  new DestinationsText({
+    subTitle: "SIMPLY AMAZING PLACES",
+    mainTitle: "Popular Destinations",
+  }),
 ];
 
 main.appendChild(textlari[0].render());
@@ -65,7 +66,8 @@ main.appendChild(textlari[0].render());
 const imgBox = document.querySelector(".destination-img");
 
 class ImagesContainer {
-  constructor(src, text1, text2, text3) {
+  // Konstruktorda tartib emas, kalit so'zlar (src, text1...) muhim bo'lishi uchun {} ishlatamiz
+  constructor({ src, text1, text2, text3 }) {
     this.src = src;
     this.text1 = text1;
     this.text2 = text2;
@@ -95,53 +97,54 @@ class ImagesContainer {
 }
 
 const rasmlar = [
-  new ImagesContainer(
-    "/Colorlib Tour Project/assets/Images/destination_1.jpg",
-    "Bali",
-    "Nulla pretium tincidunt felis, nec.",
-    "From 679$"
-  ),
-  new ImagesContainer(
-    "/Colorlib Tour Project/assets/Images/destination_2.jpg",
-    "Indonesia",
-    "Nulla pretium tincidunt felis, nec.",
-    "From 679$"
-  ),
-  new ImagesContainer(
-    "/Colorlib Tour Project/assets/Images/destination_3.jpg",
-    "San Fransisco",
-    "Nulla pretium tincidunt felis, nec.",
-    "From 679$"
-  ),
-  new ImagesContainer(
-    "/Colorlib Tour Project/assets/Images/destination_4.jpg",
-    "Paris",
-    "Nulla pretium tincidunt felis, nec.",
-    "From 679$"
-  ),
-  new ImagesContainer(
-    "/Colorlib Tour Project/assets/Images/destination_5.jpg",
-    "Phi Phi Island",
-    "Nulla pretium tincidunt felis, nec.",
-    "From 679$"
-  ),
-  new ImagesContainer(
-    "/Colorlib Tour Project/assets/Images/destination_6.jpg",
-    "Mykonos",
-    "Nulla pretium tincidunt felis, nec.",
-    "From 679$"
-  ),
+  new ImagesContainer({
+    src: "/Colorlib Tour Project/assets/Images/destination_1.jpg",
+    text1: "Bali",
+    text2: "Nulla pretium tincidunt felis, nec.",
+    text3: "From 679$",
+  }),
+  new ImagesContainer({
+    src: "/Colorlib Tour Project/assets/Images/destination_2.jpg",
+    text1: "Indonesia",
+    text2: "Nulla pretium tincidunt felis, nec.",
+    text3: "From 679$",
+  }),
+  new ImagesContainer({
+    src: "/Colorlib Tour Project/assets/Images/destination_3.jpg",
+    text1: "San Fransisco",
+    text2: "Nulla pretium tincidunt felis, nec.",
+    text3: "From 679$",
+  }),
+  new ImagesContainer({
+    src: "/Colorlib Tour Project/assets/Images/destination_4.jpg",
+    text1: "Paris",
+    text2: "Nulla pretium tincidunt felis, nec.",
+    text3: "From 679$",
+  }),
+  new ImagesContainer({
+    src: "/Colorlib Tour Project/assets/Images/destination_5.jpg",
+    text1: "Phi Phi Island",
+    text2: "Nulla pretium tincidunt felis, nec.",
+    text3: "From 679$",
+  }),
+  new ImagesContainer({
+    src: "/Colorlib Tour Project/assets/Images/destination_6.jpg",
+    text1: "Mykonos",
+    text2: "Nulla pretium tincidunt felis, nec.",
+    text3: "From 679$",
+  }),
 ];
 
 rasmlar.forEach((rasm) => {
   imgBox.appendChild(rasm.render());
 });
 
-// Konteynerni tashqarida tanlab olamiz
+// testimonials sectioni
+
 const testimonialsContainer = document.querySelector(".testimonials-container");
 
 class Testimonial {
-  constructor(subTitle, mainTitle, text, clientNomi) {
+  constructor({ subTitle, mainTitle, text, clientNomi }) {
     this.subTitle = subTitle;
     this.mainTitle = mainTitle;
     this.text = text;
@@ -170,17 +173,17 @@ class Testimonial {
 }
 
 const testimonialItem = [
-  new Testimonial(
-    "SIMPLY AMAZING PLACES",
-    "Testimonials",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. lobortis dolor. Cras placerat lectus a posuere aliquet. Curabitur quis vehicula odio.",
-    "John Turner"
-  ),
+  new Testimonial({
+    subTitle: "SIMPLY AMAZING PLACES",
+    mainTitle: "Testimonials",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. lobortis dolor. Cras placerat lectus a posuere aliquet. Curabitur quis vehicula odio.",
+    clientNomi: "John Turner",
+  }),
 ];
 
 testimonialsContainer.appendChild(testimonialItem[0].render());
 
-// pictur container uchun
+// picture container uchun
 
 const pictureContainer = document.querySelector(".picture-container");
 
@@ -189,7 +192,8 @@ mainPictureContainer.className = "main-picture-container";
 
 // Chap tomon
 class LeftItem {
-  constructor(date, month, title, category, description, src) {
+  // Argumentlarni {} ichiga olib, kalit so'zga bog'ladik
+  constructor({ date, month, title, category, description, src }) {
     this.date = date;
     this.month = month;
     this.title = title;
@@ -216,7 +220,7 @@ class LeftItem {
 
 // O`ng tomon
 class RightItem {
-  constructor(title, subtitle, src) {
+  constructor({ title, subtitle, src }) {
     this.title = title;
     this.subtitle = subtitle;
     this.src = src;
@@ -239,37 +243,40 @@ class RightItem {
 }
 
 const leftItemsData = [
-  new LeftItem(
-    "02",
-    "JUNE",
-    "Best tips to travel light",
-    "LIFESTYLE & TRAVEL",
-    "Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa. Tempor massa et laoreet.",
-    "/Colorlib Tour Project/assets/Images/news_1.jpg"
-  ),
-  new LeftItem(
-    "01",
-    "JUNE",
-    "Best tips to travel light",
-    "LIFESTYLE & TRAVEL",
-    "Tempor massa et laoreet malesuada. Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.",
-    "/Colorlib Tour Project/assets/Images/news_2.jpg"
-  ),
-  new LeftItem(
-    "29",
-    "MAY",
-    "Best tips to travel light",
-    "LIFESTYLE & TRAVEL",
-    "Vivamus massa. Tempor massa et laoreet malesuada. Aliquam nulla nisl, accumsan sit amet mattis.",
-    "/Colorlib Tour Project/assets/Images/news_3.jpg"
-  ),
+  new LeftItem({
+    date: "02",
+    month: "JUNE",
+    title: "Best tips to travel light",
+    category: "LIFESTYLE & TRAVEL",
+    description:
+      "Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa. Tempor massa et laoreet.",
+    src: "/Colorlib Tour Project/assets/Images/news_1.jpg",
+  }),
+  new LeftItem({
+    date: "01",
+    month: "JUNE",
+    title: "Best tips to travel light",
+    category: "LIFESTYLE & TRAVEL",
+    description:
+      "Tempor massa et laoreet malesuada. Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.",
+    src: "/Colorlib Tour Project/assets/Images/news_2.jpg",
+  }),
+  new LeftItem({
+    date: "29",
+    month: "MAY",
+    title: "Best tips to travel light",
+    category: "LIFESTYLE & TRAVEL",
+    description:
+      "Vivamus massa. Tempor massa et laoreet malesuada. Aliquam nulla nisl, accumsan sit amet mattis.",
+    src: "/Colorlib Tour Project/assets/Images/news_3.jpg",
+  }),
 ];
 
-const rightItemData = new RightItem(
-  "Get a 20% Discount",
-  "Buy Your Vacation Online Now",
-  "/Colorlib Tour Project/assets/Images/travello.jpg"
-);
+const rightItemData = new RightItem({
+  title: "Get a 20% Discount",
+  subtitle: "Buy Your Vacation Online Now",
+  src: "/Colorlib Tour Project/assets/Images/travello.jpg",
+});
 
 const leftPictureDiv = document.createElement("div");
 leftPictureDiv.className = "left-picture";
