@@ -825,7 +825,6 @@ h3 {
 }
 
 .sale-text {
-  /* O'zgartirildi: text-overlay */
   position: absolute;
   bottom: 0;
   left: 0;
@@ -878,20 +877,9 @@ h3 {
 
 /* All footer styles of HTMLS */
 
-#second-result-container {
-  max-width: 1200px;
-  width: 100%;
-  padding: 10px 20px;
-  margin: 0 auto;
-  font-size: 10px;
-  display: flex;
-  justify-content: space-between;
-  background-color: rgba(133, 133, 134, 0.6);
-}
-
 .contact-footer {
   background: url(./Images/footer_1.jpg);
-  padding: 70px 0 30px;
+  padding: 70px 30px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -980,11 +968,53 @@ h3 {
 }
 
 #result-container {
+  width: 100%;
   display: flex;
+  flex-direction: column;
+  padding: 10px 30px;
   gap: 20px;
-  background-color: white;
-  color: black;
-  font-size: 10px;
+}
+
+.first-result {
+  width: 100%;
+  background-color: rgba(163, 163, 168, 0.7);
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.first-result h4 {
+  border-bottom: 1px solid black;
+  padding: 10px 0;
+}
+
+.second-result {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: rgba(163, 163, 168, 0.7);
+}
+
+.second-result h4 {
+  padding: 10px 0;
+  border-bottom: 1px solid black;
+}
+
+.third-result {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: rgba(163, 163, 168, 0.7);
+}
+
+.third-result h4 {
+  padding: 10px 0;
+  border-bottom: 1px solid black;
 }
 
 /* Some Responsive */

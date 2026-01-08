@@ -34,12 +34,8 @@ button.addEventListener("click", function () {
 
 // contact name and email input
 
-// Elementlarni faqat bir marta yaratib olamiz
-
 const forms = document.getElementById("form-contacter");
-const result = document.getElementById("result-container");
-const sarlavha1 = document.createElement("h2");
-const sarlavhaEmail = document.createElement("h2");
+const result = document.getElementById("third-result");
 
 forms.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -50,16 +46,15 @@ forms.addEventListener("submit", function (e) {
   if ((name === "" && email !== "") || (email === "" && name !== "")) {
     alert("Email yoki Ismni kiriting");
   } else {
-    sarlavha1.textContent = "Kiritilgan Ism : " + name;
-    sarlavhaEmail.textContent = "Kiritilgan Email : " + email;
+    result.innerHTML = ` <h4>Your Name : ${name} </h4>
+            <h4>Your Email : ${email} </h4>`;
   }
-
-  result.append(sarlavha1, sarlavhaEmail);
 
   forms.reset();
 });
 
 const form = document.getElementById("firstForm");
+const resultSecond = document.getElementById("first-result");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -70,63 +65,37 @@ form.addEventListener("submit", function (e) {
   const arrival = inputs[2].value;
   const budget = inputs[3].value;
 
-  const sarlavhaCity = document.createElement("h2");
-  const sarlavhaDeparture = document.createElement("h2");
-  const sarlavhaArrival = document.createElement("h2");
-  const sarlavhaBudget = document.createElement("h2");
-
-  if (!city && !departure && !arrival && !budget) {
+  if (!city || !departure || !arrival || !budget) {
     alert("Iltimos, bo`sh joyni to'ldiring");
   } else {
-    sarlavhaCity.textContent = "  va    City: " + city;
-    sarlavhaDeparture.textContent = "Departure: " + departure;
-    sarlavhaArrival.textContent = "Arrival: " + arrival;
-    sarlavhaBudget.textContent = "Budget: " + budget;
-
-    result.append(
-      sarlavhaCity,
-      sarlavhaDeparture,
-      sarlavhaArrival,
-      sarlavhaBudget
-    );
+    resultSecond.innerHTML = `   <h4>City : ${city} </h4>
+            <h4>Departue : ${departure} </h4>
+            <h4>Arrival : ${arrival} </h4>
+            <h4>Budget : ${budget} </h4>`;
   }
 
   form.reset();
 });
 
-const footerContainer = document.querySelector(".contact-footer-container");
-
-const secondResultContainer = document.createElement("div");
-secondResultContainer.id = "second-result-container";
-
-const formm = document.querySelector(".form-side form");
+const thirdResult = document.getElementById("second-result");
+const formm = document.getElementById("forum");
 
 formm.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const name = document.getElementById("FormName").value;
-  const email = document.getElementById("EmailName").value;
-  const subject = document.getElementById("SubjectName").value;
-  const message = document.getElementById("Message").value;
+  const names = document.getElementById("FormName").value;
+  const emails = document.getElementById("EmailName").value;
+  const subjects = document.getElementById("SubjectName").value;
+  const messages = document.getElementById("Message").value;
 
-  const sarlavhaName = document.createElement("h2");
-  const sarlavhaEmail = document.createElement("h2");
-  const sarlavhaSubject = document.createElement("h2");
-  const sarlavhaMessage = document.createElement("h2");
-
-  sarlavhaName.textContent = "Your Name: " + name;
-  sarlavhaEmail.textContent = "Your E-mail: " + email;
-  sarlavhaSubject.textContent = "Subject: " + subject;
-  sarlavhaMessage.textContent = "Message: " + message;
-
-  secondResultContainer.append(
-    sarlavhaName,
-    sarlavhaEmail,
-    sarlavhaSubject,
-    sarlavhaMessage
-  );
+  if (!names || !emails || !subjects || !messages) {
+    alert("Iltimos, bo`sh joyni to'ldiring");
+  } else {
+    thirdResult.innerHTML = `<h4>Your Name : ${names} </h4>
+            <h4>Your Email : ${emails} </h4>
+            <h4>Your Subject : ${subjects} </h4>
+            <h4>Your Messages :${messages} </h4>`;
+  }
 
   formm.reset();
 });
-
-footerContainer.appendChild(secondResultContainer);
