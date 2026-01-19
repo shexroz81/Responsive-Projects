@@ -192,7 +192,6 @@ mainPictureContainer.className = "main-picture-container";
 
 // Chap tomon
 class LeftItem {
-  // Argumentlarni {} ichiga olib, kalit so'zga bog'ladik
   constructor({ date, month, title, category, description, src }) {
     this.date = date;
     this.month = month;
